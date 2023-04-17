@@ -1,0 +1,13 @@
+[Unit]
+Description=Http Server
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/http
+ExecStart=/bin/bash /root/http/launch.sh
+ExecStop=/usr/bin/kill -s QUIT $MAINPID
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
